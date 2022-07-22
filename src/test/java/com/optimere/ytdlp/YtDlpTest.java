@@ -1,24 +1,24 @@
-package com.jfposton.ytdlp;
+package com.optimere.ytdlp;
 
 import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.jfposton.ytdlp.mapper.VideoFormat;
-import com.jfposton.ytdlp.mapper.VideoInfo;
-import com.jfposton.ytdlp.mapper.VideoThumbnail;
+import com.optimere.ytdlp.mapper.VideoFormat;
+import com.optimere.ytdlp.mapper.VideoInfo;
+import com.optimere.ytdlp.mapper.VideoThumbnail;
 
 public class YtDlpTest {
 
   private static final String DIRECTORY = System.getProperty("java.io.tmpdir");
   private static final String VIDEO_URL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-  private static final String NONE_EXISTENT_VIDEO_URL =
-      "https://www.youtube.com/watch?v=dQw4w9WgXcZ";
+  private static final String NONE_EXISTENT_VIDEO_URL = "https://www.youtube.com/watch?v=dQw4w9WgXcZ";
 
   /**
    * @Test public void testUsingOwnExecutablePath() throws YtDlpException {
-   * YtDlp.setExecutablePath("/usr/bin/yt-dlp"); Assert.assertNotNull(YtDlp.getVersion()); }
+   *       YtDlp.setExecutablePath("/usr/bin/yt-dlp");
+   *       Assert.assertNotNull(YtDlp.getVersion()); }
    */
   @Test
   public void testGetVersion() throws YtDlpException {

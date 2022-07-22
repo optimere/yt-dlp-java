@@ -1,11 +1,11 @@
-package com.jfposton.ytdlp.utils;
+package com.optimere.ytdlp.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.jfposton.ytdlp.DownloadProgressCallback;
+import com.optimere.ytdlp.DownloadProgressCallback;
 
 public class StreamProcessExtractor extends Thread {
   private static final String GROUP_PERCENT = "percent";
@@ -15,9 +15,8 @@ public class StreamProcessExtractor extends Thread {
   private StringBuilder buffer;
   private final DownloadProgressCallback callback;
 
-  private Pattern p =
-      Pattern.compile(
-          "\\[download\\]\\s+(?<percent>\\d+\\.\\d)% .* ETA (?<minutes>\\d+):(?<seconds>\\d+)");
+  private Pattern p = Pattern.compile(
+      "\\[download\\]\\s+(?<percent>\\d+\\.\\d)% .* ETA (?<minutes>\\d+):(?<seconds>\\d+)");
 
   public StreamProcessExtractor(
       StringBuilder buffer, InputStream stream, DownloadProgressCallback callback) {

@@ -1,4 +1,4 @@
-package com.jfposton.ytdlp;
+package com.optimere.ytdlp;
 
 /** YtDlp Exception */
 public class YtDlpException extends Exception {

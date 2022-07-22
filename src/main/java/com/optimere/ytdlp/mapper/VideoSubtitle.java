@@ -1,6 +1,7 @@
-package com.jfposton.ytdlp.mapper;
+package com.optimere.ytdlp.mapper;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class VideoSubtitle {}
+public class VideoSubtitle {
+}

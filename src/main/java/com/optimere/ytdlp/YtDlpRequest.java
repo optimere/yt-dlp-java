@@ -1,4 +1,4 @@
-package com.jfposton.ytdlp;
+package com.optimere.ytdlp;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -48,7 +48,8 @@ public class YtDlpRequest {
   }
 
   /** Constructor */
-  public YtDlpRequest() {}
+  public YtDlpRequest() {
+  }
 
   /**
    * Construct a request with a videoUrl
@@ -80,7 +81,8 @@ public class YtDlpRequest {
     StringBuilder builder = new StringBuilder();
 
     // Set Url
-    if (url != null) builder.append(url + " ");
+    if (url != null)
+      builder.append(url + " ");
 
     // Build options strings
     Iterator<Entry<String, String>> it = options.entrySet().iterator();
@@ -90,7 +92,8 @@ public class YtDlpRequest {
       String name = option.getKey();
       String value = option.getValue();
 
-      if (value == null) value = "";
+      if (value == null)
+        value = "";
 
       String optionFormatted = String.format("--%s %s", name, value).trim();
       builder.append(optionFormatted + " ");

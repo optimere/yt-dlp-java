@@ -1,11 +1,4 @@
-package com.jfposton.ytdlp;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jfposton.ytdlp.mapper.VideoFormat;
-import com.jfposton.ytdlp.mapper.VideoInfo;
-import com.jfposton.ytdlp.mapper.VideoThumbnail;
-import com.jfposton.ytdlp.utils.StreamGobbler;
-import com.jfposton.ytdlp.utils.StreamProcessExtractor;
+package com.optimere.ytdlp;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,11 +6,20 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.optimere.ytdlp.mapper.VideoFormat;
+import com.optimere.ytdlp.mapper.VideoInfo;
+import com.optimere.ytdlp.mapper.VideoThumbnail;
+import com.optimere.ytdlp.utils.StreamGobbler;
+import com.optimere.ytdlp.utils.StreamProcessExtractor;
+
 /**
  * Provide an interface for yt-dlp executable
  *
- * <p>For more information on yt-dlp, please see <a
- * href="https://github.com/yt-dlp/yt-dlp/blob/master/README.md">yt-dlp Documentation</a>
+ * <p>
+ * For more information on yt-dlp, please see <a
+ * href="https://github.com/yt-dlp/yt-dlp/blob/master/README.md">yt-dlp
+ * Documentation</a>
  */
 public class YtDlp {
 
@@ -52,7 +54,7 @@ public class YtDlp {
   /**
    * Execute yt-dlp request
    *
-   * @param request request object
+   * @param request  request object
    * @param callback callback
    * @return response object
    * @throws YtDlpException
@@ -76,7 +78,8 @@ public class YtDlp {
     ProcessBuilder processBuilder = new ProcessBuilder(split);
 
     // Define directory if one is passed
-    if (directory != null) processBuilder.directory(new File(directory));
+    if (directory != null)
+      processBuilder.directory(new File(directory));
 
     try {
       process = processBuilder.start();
@@ -87,8 +90,7 @@ public class YtDlp {
     InputStream outStream = process.getInputStream();
     InputStream errStream = process.getErrorStream();
 
-    StreamProcessExtractor stdOutProcessor =
-        new StreamProcessExtractor(outBuffer, outStream, callback);
+    StreamProcessExtractor stdOutProcessor = new StreamProcessExtractor(outBuffer, outStream, callback);
     StreamGobbler stdErrProcessor = new StreamGobbler(errBuffer, errStream);
 
     try {

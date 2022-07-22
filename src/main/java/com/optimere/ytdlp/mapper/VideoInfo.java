@@ -1,4 +1,4 @@
-package com.jfposton.ytdlp.mapper;
+package com.optimere.ytdlp.mapper;
 
 import java.util.List;
 
